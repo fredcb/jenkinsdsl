@@ -29,9 +29,11 @@ job('nodejs-dsl-test'){
 	customWorkspace('/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
-		shell 'npm start'
-		shell 'npm test'
-		shell 'npm stop'
+		shell 'npm start&'
+		shell 'sleep 5'
+		shell 'curl http://127.0.0.1:1337/'
+		shell 'pkill npm'
+		shell 'true'
 	}
 
 	publishers{
