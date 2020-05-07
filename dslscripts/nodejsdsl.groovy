@@ -11,7 +11,7 @@ job('nodejs-dsl-checkout') {
 
 job('nodejs-dsl-install') {
 	label ('appServer')
-	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
+	customWorkspace('/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
 		shell 'uname -a'
@@ -26,7 +26,7 @@ job('nodejs-dsl-install') {
 
 job('nodejs-dsl-test'){
 	label ('appServer')
-	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
+	customWorkspace('/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
 		shell 'npm start'
