@@ -1,7 +1,7 @@
 job('nodejs-dsl-checkout') {
     label ('appServer')
     scm {
-        github('frecb/nodejsapp', 'master')
+        github('tetradev01/nodejsapp', 'master')
     }
   
    publishers {
