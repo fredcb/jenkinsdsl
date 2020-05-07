@@ -1,7 +1,7 @@
 job('nodejs-dsl-checkout') {
     label ('appServer')
     scm {
-        github('tetradev01/nodejsapp', 'master')
+        github('frecb/nodejsapp', 'master')
     }
   
    publishers {
@@ -14,6 +14,8 @@ job('nodejs-dsl-install') {
 	customWorkspace('/var/lib/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
+		shell 'uname -a'
+		shell 'id -a'
 		shell 'npm install'
 	}
 
