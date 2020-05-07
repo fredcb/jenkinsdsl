@@ -29,9 +29,9 @@ job('nodejs-dsl-test'){
 	customWorkspace('/jenkins/workspace/nodejs-dsl-checkout')
 
 	steps{
-		shell 'npm start&'
-		shell 'sleep 5'
-		shell 'curl http://127.0.0.1:1337/'
+		shell 'npm start &'
+		shell 'sleep 10'
+		shell 'curl -s http://127.0.0.1:1337/| grep 'Welcome to TetraNoodle''
 		shell 'pkill npm'
 		shell 'true'
 	}
